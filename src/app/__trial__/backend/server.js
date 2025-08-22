@@ -25,7 +25,7 @@ function loadQuests() {
 }
 
 function saveQuestsToFile() {
-    const dataToWrite = JSON.stringify(quests, null, 2); // Pretty print with indentation
+    const dataToWrite = JSON.stringify(quests, null, 2);
     fs.writeFile(datapath, dataToWrite, (err) => {
         if (err) throw err;
         console.log("All quests saved to file.");
@@ -90,4 +90,5 @@ app.delete("/quests/:id", (req, res) => {
 app.listen(5000, () => {
     loadQuests();
     console.log("http://localhost:5000");
+
 });
