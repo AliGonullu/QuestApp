@@ -1,0 +1,455 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #18181b 0%, #232946 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.main {
+  background: rgba(24, 24, 27, 0.96);
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 32px 4px #db0000, 0 0 0 2px #ffb700;
+  min-width: 500px;
+  width: 100%;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border: 2px solid #ff00cc;
+}
+
+.title {
+  text-align: center;
+  color: #00ffe7;
+  margin-bottom: 0.5rem;
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #00ffe7, 0 0 2px #ff00cc;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.inputRow {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.actionRow {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.inputRow:first-child .input {
+  flex: 1;
+}
+
+.inputRow:last-child .input {
+  flex: 2;
+}
+
+.actionRow .dateInput {
+  flex: 1;
+  min-width: 120px;
+  max-width: 180px;
+}
+
+.actionRow .addButton {
+  flex: 1;
+  max-width: 180px;
+}
+
+.inputRow:last-child .dateInput {
+  flex: 1;
+  min-width: 120px;
+  max-width: 180px;
+}
+
+.input {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  border: 2px solid #ff00cc;
+  border-radius: 14px;
+  font-size: 1.13rem;
+  outline: none;
+  background: #232946;
+  color: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #ff00cc44;
+  font-family: inherit;
+}
+
+.input:focus {
+  border: 2px solid #00ffe7;
+  box-shadow: 0 0 12px #00ffe7cc;
+}
+
+.dateInput {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 2px solid #ff00cc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  background: #232946;
+  color: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #ff00cc44;
+  font-family: inherit;
+}
+
+.dateInput:focus {
+  border: 2px solid #00ffe7;
+  box-shadow: 0 0 12px #00ffe7cc;
+}
+
+.dateInput[type="time"] {
+  color: #fff;
+  background: #232946;
+  border: 2px solid #ff00cc;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  box-shadow: 0 0 8px #ff00cc44;
+  font-family: inherit;
+  padding: 0.7rem 1rem;
+}
+
+.addButton {
+  background: linear-gradient(90deg, #7f1fff 0%, #a21caf 100%);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: 0 0 16px #a21cafcc, 0 0 8px #7f1fffcc;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 4px #fff;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.addButton:hover {
+  background: linear-gradient(90deg, #a21caf 0%, #7f1fff 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 0 32px #a21cafcc, 0 0 24px #7f1fffcc;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.listItem {
+  background: rgba(35, 41, 70, 0.92);
+  padding: 1.3rem 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 8px #00ffe799, 0 0 2px #ff00cc99;
+  border: 1.5px solid #ff00cc;
+  position: relative;
+  transition: box-shadow 0.2s, background 0.2s, border 0.2s, transform 0.2s;
+  margin-bottom: 1.2rem;
+  min-height: 72px;
+  font-size: 1.13rem;
+  gap: 1.2rem;
+}
+
+.listItem:hover,
+.listItem:focus-within {
+  box-shadow: 0 0 24px #00ffe7cc, 0 0 16px #ff00cccc;
+  border: 1.5px solid #00ffe7;
+  transform: scale(1.01);
+}
+
+.todoText {
+  font-size: 1.13rem;
+  line-height: 1.6;
+  word-break: break-word;      /* Uzun kelimeleri böl */
+  overflow-wrap: anywhere;     /* Taşmayı önle */
+  white-space: pre-line;       /* Satır sonu ve boşlukları koru */
+  flex: 1 1 0%;
+  min-width: 0;
+  color: #fff;
+  text-shadow: 0 0 4px #00ffe7cc;
+}
+
+.todoDesc {
+  display: block;
+  margin-top: 0.25rem;
+  color: #00ffe7;
+  font-size: 0.97rem;
+  font-style: italic;
+  word-break: break-word;      /* Uzun kelimeleri böl */
+  overflow-wrap: anywhere;     /* Taşmayı önle */
+  white-space: pre-line;       /* Satır sonu ve boşlukları koru */
+}
+
+.deleteButton {
+  background: linear-gradient(90deg, #ff00cc 0%, #00ffe7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #18181b;
+  padding: 0.45rem 0.7rem;
+  border-radius: 14px;
+  font-size: 1.13rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 0 8px #ff00cc99, 0 0 8px #00ffe799;
+  min-height: 48px;
+}
+
+.deleteButton:hover {
+  background: linear-gradient(90deg, #00ffe7 0%, #ff00cc 100%);
+  color: #fff;
+  transform: scale(1.07);
+  box-shadow: 0 0 16px #00ffe7cc, 0 0 16px #ff00cccc;
+}
+
+.todoMetaRow {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.todoDate {
+  display: inline-block;
+  padding: 0.18em 1em;
+  background: linear-gradient(90deg, #18181b 60%, #232946 100%);
+  color: #ff00cc;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 8px #00ffe7cc;
+  text-shadow: 0 0 4px #ff00cc;
+  border: 1.5px solid #232946;
+}
+
+.todoTime {
+  display: inline-block;
+  padding: 0.18em 1em;
+  background: linear-gradient(90deg, #18181b 60%, #232946 100%);
+  color: #00ffe7;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 4px #00ffe7cc;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #00ffe7cc;
+  border: 1.5px solid #232946;
+}
+
+.todoPriority {
+  display: inline-block;
+  padding: 0.18em 1em;
+  border-radius: 8px;
+  background: rgba(35,41,70,0.7);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-left: 0;
+  box-shadow: 0 0 8px #00ffe733;
+  vertical-align: middle;
+  border: 1.5px solid #232946;
+}
+
+.todoPriority[data-priority="Yüksek"] {
+  color: #ff2d55;
+  font-weight: bold;
+  text-shadow: 0 0 6px #ff2d55cc;
+}
+
+.todoPriority[data-priority="Orta"] {
+  color: #ff9500;
+  font-weight: bold;
+  text-shadow: 0 0 6px #ff9500cc;
+}
+
+.todoPriority[data-priority="Düşük"] {
+  color: #32d74b;
+  font-weight: bold;
+  text-shadow: 0 0 6px #32d74bcc;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.buttonRow button {
+  flex: 1 1 0;
+  width: 100%;
+  margin-top: 0;
+}
+
+/* --- Zaten var olan kodların altına ekle --- */
+
+/* Tablet ve küçük masaüstü için */
+@media (max-width: 900px) {
+  .main {
+    max-width: 90vw;
+    padding: 2rem;
+  }
+  .listItem {
+    padding: 1rem 0.5rem;
+    font-size: 1.05rem;
+  }
+  .form {
+    padding: 1rem 0.5rem;
+  }
+  .buttonRow {
+    gap: 0.5rem;
+  }
+}
+
+/* Mobil ve dikey ekranlar için */
+@media (max-width: 700px) {
+  .main {
+    max-width: 90vw;
+    min-width: 0;
+
+    padding: 2rem;
+    border-radius: 0;
+  }
+  .title {
+    font-size: 1.4rem;
+    padding: 0.4rem 0;
+  }
+  .list {
+    gap: 0.5rem;
+  }
+  .listItem {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem;
+    min-height: 0;
+    margin-bottom: 0.7rem;
+  }
+  .todoText {
+    font-size: 1rem;
+    line-height: 1.5;
+    min-width: 0;
+    word-break: break-word;
+  }
+  .todoDesc {
+    font-size: 0.93rem;
+  }
+  .todoMetaRow {
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-start;
+    margin-top: 0.3rem;
+  }
+  .todoDate,
+  .todoTime,
+  .todoPriority {
+    font-size: 0.95rem;
+    padding: 0.13em 0.7em;
+    border-radius: 7px;
+    min-width: 0;
+    width: fit-content;
+  }
+  .form {
+    gap: 0.7rem;
+    padding: 0.7rem 0.2rem;
+    border-radius: 0;
+  }
+  .inputRow,
+  .actionRow {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+  }
+  .input,
+  .dateInput,
+  .addButton,
+  .deleteButton,
+  .buttonRow button {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.7rem;
+    min-height: 38px;
+    border-radius: 9px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .buttonRow {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+    width: 100%;
+  }
+  .buttonRow button {
+    margin-top: 0;
+  }
+  .dragHandle {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Çok küçük ekranlar için */
+@media (max-width: 400px) {
+  .main {
+    padding: 0.2rem 0.01rem 0.5rem 0.01rem;
+    border-radius: 0;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .input,
+  .dateInput,
+  .addButton,
+  .deleteButton,
+  .buttonRow button {
+    font-size: 0.91rem;
+    padding: 0.45rem 0.2rem;
+    min-height: 28px;
+    border-radius: 6px;
+  }
+  .todoDate,
+  .todoTime,
+  .todoPriority {
+    font-size: 0.91rem;
+    padding: 0.09em 0.5em;
+    border-radius: 6px;
+  }
+}
+
+/* Yatayda taşmayı önle */
+.listItem,
+.form,
+.inputRow,
+.actionRow,
+.buttonRow {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
